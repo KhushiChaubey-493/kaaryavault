@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: black;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 10px 20px;
+}
+
+nav h3 {
+    font-size: 20px;
+}
+
+nav button {
+    padding: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: rgb(12, 12, 12);
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    transition: all 0.5s ease;
+}
+
+nav button:hover {
+    background-color: rgb(202, 196, 196);
+    color: rgb(7, 7, 7);
+    transform: scale(1.1);
+}
+
+main {
+    display: flex;
+    gap: 20px;
+}
+
+main section {
+    background-color: rgb(17, 15, 15);
+    color: white;
+    width: 100%;
+    height: 85vh;
+    margin: 20px;
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: 0px 0px 0px rgba(36, 35, 35, 0.7);
+    display: flex;
+    flex-direction: column;
+}
+
+main section .targetSection {
+    display: flex;
+    justify-content: space-between;
+}
+
+.targetSection h5 {
+    font-size: 16px;
+}
+
+.active {
+    border: 2px dashed white;
+}
+
+main section .task {
+    background-color: rgb(53, 50, 50);
+    margin: 10px;
+    border-radius: 12px;
+    padding: 10px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+main section .task h4 {
+    font-size: 20px;
+}
+
+main section .task p {
+    margin-top: 7px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+main section .task .delete {
+    height: fit-content;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #ff4d4d;
+    color: white;
+    border-radius: 6px;
+}
+
+
+.modal {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}
+
+.modal h3 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal form input {
+    width: 100%;
+    margin: 6px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+#add {
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #ff4d4d;
+    color: white;
+    border-radius: 6px;
+}
+
+/* Task card */
+.task {
+    background-color: rgb(53, 50, 50);
+    margin: 10px;
+    border-radius: 12px;
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: grab;
+
+    animation: taskAppear 0.3s ease;
+    transition: transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.task:hover {
+    transform: translateY(-3px);
+    background-color: rgb(65, 61, 61);
+}
+
+.task:active {
+    cursor: grabbing;
+}
+
+.task h4 {
+    font-size: 20px;
+}
+
+.task p {
+    margin-top: 7px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Task entrance animation */
+@keyframes taskAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Task delete animation */
+@keyframes taskDelete {
+    to {
+        opacity: 0;
+        transform: scale(0.85);
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.task.deleting {
+    animation: taskDelete 0.35s ease forwards;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Delete button */
+.task .delete {
+    height: fit-content;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #ff4d4d;
+    color: white;
+    border-radius: 6px;
+
+    transition: transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.task .delete:hover {
+    background-color: #e60000;
+    transform: scale(1.08);
+}
+
+/* Drag and drop */
+main section {
+    transition: border 0.2s ease;
+}
+
+.active {
+    border: 2px dashed white;
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaaryavault</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <h3>Kaaryavault</h3>
+      <button id="addNewTaskBtn">Add New Task</button>
+    </nav>
+    <div class="modal">
+      <h3>Your Task</h3>
+
+      <form>
+        <input
+          type="text"
+          name="titleInp"
+          id="titleInp"
+          placeholder="Enter task title"
+          maxlength="80"
+          required
+        />
+
+        <input
+          type="text"
+          name="descInp"
+          id="descInp"
+          placeholder="Enter task description"
+          maxlength="200"
+          required
+        />
+
+        <button type="submit" id="add">Add</button>
+      </form>
+    </div>
+    <main>
+      <section id="todo">
+        <div class="targetSection">
+          <h5>To Do</h5>
+          <div class="count" id="todoCount">0</div>
+        </div>
+      </section>
+
+      <section id="progress">
+        <div class="targetSection">
+          <h5>In Progress</h5>
+          <div class="count" id="progressCount">0</div>
+        </div>
+      </section>
+
+      <section id="done">
+        <div class="targetSection">
+          <h5>Done</h5>
+          <div class="count" id="doneCount">0</div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
