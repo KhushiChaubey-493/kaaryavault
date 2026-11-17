@@ -39,7 +39,7 @@ Follow these steps to run the project locally:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/YOUR-USERNAME/kaaryavault.git
+   git clone https://github.com/KhushiChaubey-493/kaaryavault.git
    ```
 
 2. Navigate to the project folder:
