@@ -4,6 +4,11 @@ A simple and interactive Kanban-style task management application built using **
 
 Kaaryavault helps users organize their daily tasks into three different stages: To Do, In Progress, and Done. Users can create, delete, and move tasks between sections using Drag and Drop functionality.
 
+## 🚀 Live Demo
+
+**[Click here to view Kaaryavault](https://KhushiChaubey-493.github.io/kaaryavault/)**
+
+
 ## ✨ Features
 
 - **Add Tasks:** Create tasks with a title and description.
